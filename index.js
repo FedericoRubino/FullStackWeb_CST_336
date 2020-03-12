@@ -17,7 +17,7 @@ app.use(express.static("css"));
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", function(req, res){
-	res.send("home.ejs");
+	res.render("home.ejs");
 });
 
 var friendlist = ["Alice", "Clark", "Bellamy", "Octavia"];
@@ -38,7 +38,7 @@ app.post("/addfriends", function(req, res){
 
 
 app.get("/*", function(req, res){
-	res.send("error.ejs");
+	res.render("error.ejs");
 });
 
 //3000 is for localhost and 8080 is for heroku
